@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       automate:
-        description: "automate-job"
-        required: ture
+        description: "automate"
+        required: true
         type: string
 
 jobs:
