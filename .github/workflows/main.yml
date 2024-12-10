@@ -6,7 +6,7 @@ on:
       automate:
         description: "automate"
         required: true
-        type: string
+        type: boolean
 
 jobs:
 
