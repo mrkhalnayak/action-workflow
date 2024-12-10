@@ -27,8 +27,6 @@ jobs:
     steps: 
     - name: second jobs output
       run: echo "Hello from the second job"
-    - name: making second job fails
-      run: exit 1
   
   automate:
     name: automate-job
