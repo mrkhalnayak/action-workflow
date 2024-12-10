@@ -25,11 +25,11 @@ jobs:
       - first-job
     steps: 
     - name: second jobs output
-      run: echo "Hello from second job"
+      run: echo "Hello from the second job"
   
   automate:
     name: automate-job
-    if: github.even.input.automate == 'true'
+    # if: github.even.input.automate == 'true'
     runs-on: ubuntu-latest
     needs:
       - second-job
