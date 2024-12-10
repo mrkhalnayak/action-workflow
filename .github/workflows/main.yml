@@ -1,0 +1,48 @@
+name: first-action
+
+on:
+  workflow_dispatch:
+    inputs:
+      automate:
+        description: "automate-job"
+        required: ture
+        type: boolean
+
+jobs:
+
+  first-job:
+    name: first-job
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: first job output
+      run: echo "Hello from first job. Run automate job ${{ github.event.inputs.automate }}"
+
+  second-job:
+    name: Second-job
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: second jobs output
+      run: echo "Hello from second job"
+  
+  automate:
+    name: automate-job
+    if: github.even.input.automate == 'true'
+    runs-on: ubuntu-latest
+    needs:
+      - first-job
+    steps:
+    - name: output from the automate job
+      run: echo "Hello from automate job"
+  
+  fourth-job:
+    name: fourth-job
+    runs-on: ubuntu-latest
+    if: always ()
+    needs:
+      - second-job
+      - automate
+    steps:
+    - name: fouth-job's output
+      run: echo "Hello From the fourth-job"
