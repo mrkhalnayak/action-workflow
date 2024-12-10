@@ -6,7 +6,7 @@ on:
       automate:
         description: "automate-job"
         required: ture
-        type: boolean
+        type: string
 
 jobs:
 
@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: first job output
-      run: echo "Hello from first job. Run automate job ${{ github.event.inputs.automate }}"
+      run: echo "Hello from the first job. Automate job ${{github.event.inputs.automate}}"
 
   second-job:
     name: Second-job
