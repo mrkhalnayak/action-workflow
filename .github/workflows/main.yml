@@ -41,6 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     if: always ()
     needs:
+      - first-job
       - second-job
       - automate
     steps:
