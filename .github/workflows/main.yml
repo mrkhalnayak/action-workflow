@@ -42,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     # if: always ()
     needs:
+      - second-job
       - automate
     steps:
     - name: fouth-job's output
