@@ -40,7 +40,7 @@ jobs:
   fourth-job:
     name: fourth-job
     runs-on: ubuntu-latest
-    if: always ()
+    #if: always ()
     needs:
       - second-job
       - automate
